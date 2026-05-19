@@ -3,8 +3,8 @@
 ## Steps
 
 - [x] Step 1 — Project Initialization
-- [ ] Step 2 — Brand & Design System
-- [ ] Step 3 — Global Components (Navbar, Footer, Root Layout)
+- [x] Step 2 — Brand & Design System
+- [x] Step 3 — Global Components (Navbar, Footer, Root Layout)
 - [ ] Step 4 — Home Page
 - [ ] Step 5 — Services Page
 - [ ] Step 6 — About Page
@@ -38,9 +38,9 @@
 
 ## Global Components
 
-- [ ] Navbar
-- [ ] Footer
-- [ ] Root Layout with ThemeProvider
+- [x] Navbar
+- [x] Footer
+- [x] Root Layout with ThemeProvider
 
 ## Infrastructure
 
@@ -51,6 +51,6 @@
 - [x] next.config.ts — image domains configured
 - [x] globals.css — smooth scroll added
 - [x] layout.tsx — ThemeProvider + suppressHydrationWarning
-- [ ] Design system — CSS variables (plum/gold palette)
-- [ ] Typography — Cormorant Garamond + DM Sans
-- [ ] Animation utilities — fade-in-up, IntersectionObserver hook
+- [x] Design system — CSS variables (plum/gold palette)
+- [x] Typography — Cormorant Garamond + DM Sans
+- [x] Animation utilities — fade-in-up, IntersectionObserver hook

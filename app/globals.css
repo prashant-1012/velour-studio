@@ -40,7 +40,9 @@
   --radius-xl: calc(var(--radius) * 1.4);
 }
 
-/* ── Light Mode ─────────────────────────────────────────── */
+/* ════════════════════════════════════════════════════════════
+   LIGHT MODE
+════════════════════════════════════════════════════════════ */
 :root {
   --background: #FAF6F1;
   --foreground: #1C1410;
@@ -69,39 +71,69 @@
   --sidebar-accent-foreground: #1C1410;
   --sidebar-border: #DDD0C8;
   --sidebar-ring: #5B2D5E;
+
+  /* Section backgrounds */
+  --sec-cream: linear-gradient(160deg, #FAF6F1 0%, #EDE8E3 50%, #FAF6F1 100%);
+  --sec-dark: linear-gradient(135deg, #1C1410 0%, #2D1A10 50%, #1C1410 100%);
+  --sec-plum: linear-gradient(135deg, #3D1A40 0%, #5B2D5E 50%, #3D1A40 100%);
+
+  /* Card shadows */
+  --card-shadow: 0 2px 12px rgba(28, 20, 16, 0.07), 0 1px 3px rgba(28, 20, 16, 0.05);
+  --card-shadow-hover: 0 16px 48px rgba(91, 45, 94, 0.14), 0 4px 16px rgba(28, 20, 16, 0.08);
+  --card-border: #DDD0C8;
+  --card-border-hover: rgba(201, 168, 76, 0.5);
+  --card-bg: #FFFFFF;
+  --card-bg-hover: #FFFCF8;
 }
 
-/* ── Dark Mode ──────────────────────────────────────────── */
+/* ════════════════════════════════════════════════════════════
+   DARK MODE — genuinely different, not just darker
+════════════════════════════════════════════════════════════ */
 .dark {
-  --background: #0F0A0F;
-  --foreground: #F5EFE8;
-  --card: #170F17;
-  --card-foreground: #F5EFE8;
-  --popover: #170F17;
-  --popover-foreground: #F5EFE8;
-  --primary: #7B3D7E;
-  --primary-foreground: #F5EFE8;
+  --background: #0A0608;
+  --foreground: #F0E8DF;
+  --card: #160D16;
+  --card-foreground: #F0E8DF;
+  --popover: #160D16;
+  --popover-foreground: #F0E8DF;
+  --primary: #9B5C9E;
+  --primary-foreground: #F0E8DF;
   --secondary: #C9A84C;
-  --secondary-foreground: #0F0A0F;
-  --muted: #1E1520;
-  --muted-foreground: #9A8A80;
-  --accent: #8B5E8A;
-  --accent-foreground: #F5EFE8;
+  --secondary-foreground: #0A0608;
+  --muted: #1E1420;
+  --muted-foreground: #8A7878;
+  --accent: #7A4878;
+  --accent-foreground: #F0E8DF;
   --destructive: #E74C3C;
-  --border: #2E2030;
-  --input: #2E2030;
-  --ring: #7B3D7E;
-  --sidebar: #170F17;
-  --sidebar-foreground: #F5EFE8;
-  --sidebar-primary: #7B3D7E;
-  --sidebar-primary-foreground: #F5EFE8;
-  --sidebar-accent: #1E1520;
-  --sidebar-accent-foreground: #F5EFE8;
-  --sidebar-border: #2E2030;
-  --sidebar-ring: #7B3D7E;
+  --border: #2A1E2A;
+  --input: #2A1E2A;
+  --ring: #9B5C9E;
+  --sidebar: #160D16;
+  --sidebar-foreground: #F0E8DF;
+  --sidebar-primary: #9B5C9E;
+  --sidebar-primary-foreground: #F0E8DF;
+  --sidebar-accent: #1E1420;
+  --sidebar-accent-foreground: #F0E8DF;
+  --sidebar-border: #2A1E2A;
+  --sidebar-ring: #9B5C9E;
+
+  /* Section backgrounds */
+  --sec-cream: linear-gradient(160deg, #1A1020 0%, #140C14 50%, #1A1020 100%);
+  --sec-dark: linear-gradient(135deg, #06030A 0%, #0A0608 50%, #06030A 100%);
+  --sec-plum: linear-gradient(135deg, #200B22 0%, #2E1530 50%, #200B22 100%);
+
+  /* Card shadows */
+  --card-shadow: 0 2px 16px rgba(0, 0, 0, 0.35), 0 1px 4px rgba(0, 0, 0, 0.25);
+  --card-shadow-hover: 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(201, 168, 76, 0.3);
+  --card-border: #2A1E2A;
+  --card-border-hover: rgba(201, 168, 76, 0.4);
+  --card-bg: #160D16;
+  --card-bg-hover: #1E1420;
 }
 
-/* ── Base Styles ────────────────────────────────────────── */
+/* ════════════════════════════════════════════════════════════
+   BASE
+════════════════════════════════════════════════════════════ */
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -118,12 +150,88 @@
 
   h1, h2, h3, h4 {
     font-family: var(--font-cormorant), Georgia, serif;
-    font-weight: 600;
+    font-weight: 300;
     letter-spacing: -0.01em;
   }
 }
 
-/* ── Texture Overlay ────────────────────────────────────── */
+/* ════════════════════════════════════════════════════════════
+   SECTION BACKGROUNDS — theme-aware via CSS vars
+════════════════════════════════════════════════════════════ */
+.section-cream {
+  background: var(--sec-cream);
+}
+
+.section-dark {
+  background: var(--sec-dark);
+}
+
+.section-plum {
+  background: var(--sec-plum);
+}
+
+/* ════════════════════════════════════════════════════════════
+   CARDS — Premium with real shadows + strong hover
+════════════════════════════════════════════════════════════ */
+.card-premium {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  box-shadow: var(--card-shadow);
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 0.35s ease,
+              border-color 0.35s ease,
+              background 0.35s ease;
+}
+
+.card-premium:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--card-shadow-hover);
+  border-color: var(--card-border-hover);
+  background: var(--card-bg-hover);
+}
+
+/* Flush grid card — for service/stat grids without gaps */
+.card-flush {
+  background: var(--card-bg);
+  transition: background 0.25s ease;
+}
+
+.card-flush:hover {
+  background: var(--card-bg-hover);
+}
+
+/* Dark section card variant */
+.card-dark {
+  background: #170F17;
+  border: 1px solid #2E2030;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.3);
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 0.35s ease,
+              border-color 0.35s ease;
+}
+
+.dark .card-dark {
+  background: #120810;
+  border-color: #2A1E2A;
+}
+
+.card-dark:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.45), 0 0 0 1px rgba(201,168,76,0.35);
+  border-color: rgba(201,168,76,0.35);
+}
+
+/* ════════════════════════════════════════════════════════════
+   HAIRLINE DIVIDER
+════════════════════════════════════════════════════════════ */
+.hairline-gold {
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(201,168,76,0.35), transparent);
+}
+
+/* ════════════════════════════════════════════════════════════
+   TEXTURE OVERLAY
+════════════════════════════════════════════════════════════ */
 .texture-overlay {
   position: relative;
 }
@@ -143,49 +251,12 @@
   z-index: 2;
 }
 
-/* ── Section Background Utilities ──────────────────────── */
-.section-light {
-  background: linear-gradient(
-    135deg,
-    #FAF6F1 0%,
-    #EDE8E3 40%,
-    #F5EBF4 70%,
-    #FAF6F1 100%
-  );
-}
-
-.dark .section-light {
-  background: linear-gradient(
-    135deg,
-    #0F0A0F 0%,
-    #170F17 40%,
-    #1A0F1A 70%,
-    #0F0A0F 100%
-  );
-}
-
-.section-muted {
-  background: linear-gradient(
-    160deg,
-    #EDE8E3 0%,
-    #FAF6F1 50%,
-    #EDE8E3 100%
-  );
-}
-
-.dark .section-muted {
-  background: linear-gradient(
-    160deg,
-    #1E1520 0%,
-    #170F17 50%,
-    #1E1520 100%
-  );
-}
-
-/* ── Animations ─────────────────────────────────────────── */
+/* ════════════════════════════════════════════════════════════
+   ANIMATIONS
+════════════════════════════════════════════════════════════ */
 .fade-in-up {
   opacity: 0;
-  transform: translateY(30px);
+  transform: translateY(28px);
   transition: opacity 0.7s ease, transform 0.7s ease;
 }
 
@@ -200,38 +271,25 @@
 .fade-in-up.delay-400 { transition-delay: 0.4s; }
 .fade-in-up.delay-500 { transition-delay: 0.5s; }
 
-.counter-animate {
-  transition: all 1.2s ease-out;
-}
-
-/* ── Interactive Transitions ────────────────────────────── */
-a, button {
-  transition: all 0.3s ease;
-}
-
-/* ── Ken Burns ──────────────────────────────────────────── */
+/* Ken Burns */
 @keyframes kenburns {
   0%   { transform: scale(1) translate(0, 0); }
   100% { transform: scale(1.08) translate(-1%, 1%); }
 }
 
-/* ── Marquee ────────────────────────────────────────────── */
+/* Marquee */
 @keyframes marquee {
   0%   { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
 
-/* ── Gold Glow Hover ────────────────────────────────────── */
-.gold-glow-hover {
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
+/* ════════════════════════════════════════════════════════════
+   UTILITIES
+════════════════════════════════════════════════════════════ */
+a, button {
+  transition: all 0.3s ease;
 }
 
-.gold-glow-hover:hover {
-  box-shadow: 0 0 0 2px #C9A84C, 0 8px 32px rgba(201, 168, 76, 0.2);
-  transform: translateY(-3px);
-}
-
-/* ── Gradient Text ──────────────────────────────────────── */
 .gradient-text {
   background: linear-gradient(135deg, #5B2D5E 0%, #C9A84C 100%);
   -webkit-background-clip: text;
@@ -244,4 +302,34 @@ a, button {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+/* Eyebrow label — reusable */
+.label-gold {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: #C9A84C;
+}
+
+/* Gold underline CTA link */
+.cta-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #5B2D5E;
+  border-bottom: 2px solid #C9A84C;
+  padding-bottom: 2px;
+  transition: gap 0.2s ease, color 0.2s ease;
+}
+
+.dark .cta-link {
+  color: #D4A5C9;
+}
+
+.cta-link:hover {
+  gap: 12px;
 }

@@ -10,8 +10,8 @@
 - [x] Step 3 — Global Components (Navbar, Footer, Root Layout)
 - [x] Step 4 — Home Page
 - [x] Step 5 — Services Page
-- [ ] Step 6 — About Page
-- [ ] Step 7 — Team Page
+- [x] Step 6 — About Page
+- [x] Step 7 — Team Page
 - [ ] Step 8 — Gallery Page
 - [ ] Step 9 — Testimonials Page
 - [ ] Step 10 — Contact Page
@@ -22,8 +22,8 @@
 
 - [ ] `/` — Home
 - [x] `/services` — Services Menu
-- [ ] `/about` — About Velour Studio
-- [ ] `/team` — Meet Our Team
+- [x] `/about` — About Velour Studio
+- [x] `/team` — Meet Our Team
 - [ ] `/gallery` — The Velour Lookbook
 - [ ] `/testimonials` — Client Reviews
 - [ ] `/contact` — Get In Touch

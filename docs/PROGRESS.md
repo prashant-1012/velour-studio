@@ -5,7 +5,7 @@
 - [x] Step 1 — Project Initialization
 - [x] Step 2 — Brand & Design System
 - [x] Step 3 — Global Components (Navbar, Footer, Root Layout)
-- [ ] Step 4 — Home Page
+- [x] Step 4 — Home Page
 - [ ] Step 5 — Services Page
 - [ ] Step 6 — About Page
 - [ ] Step 7 — Team Page

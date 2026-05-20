@@ -209,6 +209,18 @@ a, button {
   transition: all 0.3s ease;
 }
 
+/* ── Ken Burns ──────────────────────────────────────────── */
+@keyframes kenburns {
+  0%   { transform: scale(1) translate(0, 0); }
+  100% { transform: scale(1.08) translate(-1%, 1%); }
+}
+
+/* ── Marquee ────────────────────────────────────────────── */
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
 /* ── Gold Glow Hover ────────────────────────────────────── */
 .gold-glow-hover {
   transition: box-shadow 0.3s ease, transform 0.3s ease;

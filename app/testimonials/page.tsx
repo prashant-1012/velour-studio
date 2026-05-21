@@ -73,14 +73,32 @@ function Stars({ rating, size = 16 }: { rating: number; size?: number }) {
 /* ── Rating bar ─────────────────────────────────────────── */
 function RatingBar({ stars, count, total }: { stars: number; count: number; total: number }) {
   const pct = total > 0 ? Math.round((count / total) * 100) : 0;
+  const [width, setWidth] = useState(0);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = ref.current; if (!el) return;
+    // Reset then animate — handles re-visits via route changes
+    setWidth(0);
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        // rAF ensures the width:0 paint lands before we transition to target
+        requestAnimationFrame(() => requestAnimationFrame(() => setWidth(pct)));
+        observer.disconnect();
+      }
+    }, { threshold: 0.5 });
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [pct]);
+
   return (
-    <div className="flex items-center gap-3">
+    <div className="flex items-center gap-3" ref={ref}>
       <span className="text-xs text-[#8A7878] w-4 text-right flex-shrink-0">{stars}</span>
       <Star size={11} className="text-[#C9A84C] fill-[#C9A84C] flex-shrink-0" />
       <div className="flex-1 h-1.5 rounded-full bg-[#2A1E2A] overflow-hidden">
         <div
-          className="h-full rounded-full bg-[#C9A84C] transition-all duration-1000"
-          style={{ width: `${pct}%` }}
+          className="h-full rounded-full bg-[#C9A84C] transition-[width] duration-1000 ease-out"
+          style={{ width: `${width}%` }}
         />
       </div>
       <span className="text-xs text-[#5A4A5A] w-5 flex-shrink-0">{count}</span>
@@ -269,7 +287,7 @@ export default function TestimonialsPage() {
                 style={{ transitionDelay:`${(i % 3) * 90}ms` }}
               >
                 {/* Quote icon */}
-                <Quote size={28} className="text-[#C9A84C]/30 mb-4" />
+                <Quote size={28} className="text-[#C9A84C]/50 mb-4" />
 
                 {/* Pull quote — large Cormorant italic */}
                 <p
@@ -317,7 +335,7 @@ export default function TestimonialsPage() {
         <div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12 text-center">
           <p className="fade-in-up label-gold mb-8">Most Loved</p>
           <div className="fade-in-up delay-100 relative">
-            <Quote size={48} className="text-[#C9A84C]/20 mx-auto mb-6"/>
+            <Quote size={48} className="text-[#C9A84C]/40 mx-auto mb-6"/>
             <p
               className="text-3xl sm:text-4xl lg:text-5xl text-[#F0E8DF] leading-tight mb-8"
               style={{ fontFamily:"var(--font-cormorant)", fontWeight:300, fontStyle:"italic" }}

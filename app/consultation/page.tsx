@@ -142,7 +142,7 @@ function StepDots({ step }: { step: number }) {
               </span>
             </div>
             {i < STEP_LABELS.length - 1 && (
-              <div className="w-10 sm:w-16 h-px mx-1 transition-all duration-500"
+              <div className="hidden sm:block w-16 h-px mx-1 transition-all duration-500"
                 style={{ background: done ? "rgba(201,168,76,0.6)" : "rgba(201,168,76,0.15)" }}/>
             )}
           </div>
@@ -285,15 +285,20 @@ export default function ConsultationPage() {
 
                 {/* Category grid */}
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-8">
-                  {CATEGORIES.map((cat) => (
+                  {CATEGORIES.map((cat) => {
+                    const isSelected = category?.id === cat.id;
+                    const isDimmed = !!category && !isSelected;
+                    return (
                     <button
                       key={cat.id}
                       onClick={() => { setCategory(cat); setService(""); }}
                       className="relative overflow-hidden rounded-xl border text-left transition-all duration-300 group"
                       style={{
-                        borderColor: category?.id === cat.id ? "#C9A84C" : "var(--card-border)",
-                        background: category?.id === cat.id ? "rgba(201,168,76,0.06)" : "var(--card-bg)",
-                        boxShadow: category?.id === cat.id ? "0 0 0 1px rgba(201,168,76,0.3), var(--card-shadow)" : "var(--card-shadow)",
+                        borderColor: isSelected ? "#C9A84C" : "var(--card-border)",
+                        background: isSelected ? "rgba(201,168,76,0.06)" : "var(--card-bg)",
+                        boxShadow: isSelected ? "0 0 0 1px rgba(201,168,76,0.3), var(--card-shadow)" : "var(--card-shadow)",
+                        opacity: isDimmed ? 0.45 : 1,
+                        transform: isDimmed ? "scale(0.98)" : "scale(1)",
                       }}
                     >
                       {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -302,13 +307,13 @@ export default function ConsultationPage() {
                         <p className="text-xs font-semibold text-[#C9A84C] mb-0.5">{cat.icon} {cat.label}</p>
                         <p className="text-[11px] text-[#7A6A60] dark:text-[#5A4A5A] leading-tight">{cat.tagline}</p>
                       </div>
-                      {category?.id === cat.id && (
+                      {isSelected && (
                         <div className="absolute top-2 right-2 w-5 h-5 rounded-full bg-[#C9A84C] flex items-center justify-center">
                           <CheckCircle size={11} className="text-[#1C1410]"/>
                         </div>
                       )}
                     </button>
-                  ))}
+                  );})}
                 </div>
 
                 {/* Service list */}
@@ -363,7 +368,10 @@ export default function ConsultationPage() {
                   {/* Calendar */}
                   <div>
                     <p className="label-gold mb-3">Select a date</p>
-                    <div className="card-premium rounded-xl p-1 inline-block">
+                    <div
+                      className="card-premium rounded-xl p-1 inline-block"
+                      style={{ "--primary": "42 52% 54%", "--primary-foreground": "28 10% 11%" } as React.CSSProperties}
+                    >
                       <Calendar
                         mode="single"
                         selected={date}
@@ -410,7 +418,7 @@ export default function ConsultationPage() {
                 </div>
 
                 <div className="mt-10 flex items-center justify-between">
-                  <button onClick={() => goTo(1)} className="flex items-center gap-2 text-sm text-[#7A6A60] hover:text-[#C9A84C] transition-colors">
+                  <button onClick={() => goTo(1)} className="flex items-center gap-2 px-5 py-2.5 rounded-full text-sm text-[#7A6A60] dark:text-[#8A7878] border border-[#DDD0C8] dark:border-[#2A1E2A] hover:text-[#C9A84C] hover:border-[#C9A84C]/40 transition-all duration-200">
                     <ArrowLeft size={14}/> Back
                   </button>
                   <button

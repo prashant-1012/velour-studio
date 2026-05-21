@@ -49,9 +49,9 @@ Status legend: `[ ]` open · `[x]` fixed · `[-]` won't fix
 
 | ID  | Status | Issue |
 |-----|--------|-------|
-| A-1 | [ ] | **Timeline dot markers disappear on mobile.** `w-3 h-3` gold dots sit on a vertical line that collapses on small screens — dots become unreachable. |
-| A-2 | [ ] | **Core values card icons (✦ ◆ ○ ✿) are static on hover.** Text character icons have no hover animation — feels inert compared to card lift. |
-| A-3 | [ ] | **Certifications list has no row-level hover.** Each `CheckCircle` row looks like a static list. Even a subtle background highlight per row on hover would help. |
+| A-1 | [x] | **Timeline dot markers disappear on mobile.** `w-3 h-3` gold dots sit on a vertical line that collapses on small screens — dots become unreachable. |
+| A-2 | [x] | **Core values card icons (✦ ◆ ○ ✿) are static on hover.** Text character icons have no hover animation — feels inert compared to card lift. |
+| A-3 | [x] | **Certifications list has no row-level hover.** Each `CheckCircle` row looks like a static list. Even a subtle background highlight per row on hover would help. |
 
 ---
 
@@ -59,9 +59,9 @@ Status legend: `[ ]` open · `[x]` fixed · `[-]` won't fix
 
 | ID  | Status | Issue |
 |-----|--------|-------|
-| T-1 | [ ] | **Owner flip cards give no hint they are interactive.** On mobile (touch only), there is no "click to flip" label, icon, or badge. Users won't know to tap. |
-| T-2 | [ ] | **Staff card image scale-on-hover may not clip correctly on Safari/Firefox.** Known issue: `overflow-hidden` + CSS `scale` transform can bleed outside the card boundary in some browsers. |
-| T-3 | [ ] | **Staff card "Book a Session" link has no hover state.** Only gap change on hover — needs underline or color transition to feel interactive. |
+| T-1 | [x] | **Owner flip cards give no hint they are interactive.** On mobile (touch only), there is no "click to flip" label, icon, or badge. Users won't know to tap. |
+| T-2 | [x] | **Staff card image scale-on-hover may not clip correctly on Safari/Firefox.** Known issue: `overflow-hidden` + CSS `scale` transform can bleed outside the card boundary in some browsers. |
+| T-3 | [x] | **Staff card "Book a Session" link has no hover state.** Only gap change on hover — needs underline or color transition to feel interactive. |
 
 ---
 
@@ -69,9 +69,9 @@ Status legend: `[ ]` open · `[x]` fixed · `[-]` won't fix
 
 | ID  | Status | Issue |
 |-----|--------|-------|
-| G-1 | [ ] | **Filter tab switch: items already in viewport stay invisible.** IntersectionObserver won't re-fire for items that never left the viewport — they remain at opacity:0 after a tab switch. |
-| G-2 | [ ] | **Lightbox close button is small and edge-overlapping on mobile.** Hard to tap; overlaps top-right corner of image. |
-| G-3 | [ ] | **Lightbox prev/next arrows show no disabled state at first/last image.** No visual feedback that you cannot go further. |
+| G-1 | [x] | **Filter tab switch: items already in viewport stay invisible.** IntersectionObserver won't re-fire for items that never left the viewport — they remain at opacity:0 after a tab switch. |
+| G-2 | [x] | **Lightbox close button is small and edge-overlapping on mobile.** Hard to tap; overlaps top-right corner of image. |
+| G-3 | [x] | **Lightbox prev/next arrows show no disabled state at first/last image.** No visual feedback that you cannot go further. |
 
 ---
 
@@ -79,8 +79,8 @@ Status legend: `[ ]` open · `[x]` fixed · `[-]` won't fix
 
 | ID  | Status | Issue |
 |-----|--------|-------|
-| Te-1 | [ ] | **Rating bar animation does not replay on re-visit.** Bars animate once on mount. Navigating away and back shows fully-filled bars with no animation. |
-| Te-2 | [ ] | **Quote icon on review cards is near-invisible.** `text-[#C9A84C]/20` opacity is too low — the icon is barely distinguishable from the card background. |
+| Te-1 | [x] | **Rating bar animation does not replay on re-visit.** Bars animate once on mount. Navigating away and back shows fully-filled bars with no animation. |
+| Te-2 | [x] | **Quote icon on review cards is near-invisible.** `text-[#C9A84C]/20` opacity is too low — the icon is barely distinguishable from the card background. |
 
 ---
 
@@ -88,10 +88,10 @@ Status legend: `[ ]` open · `[x]` fixed · `[-]` won't fix
 
 | ID  | Status | Issue |
 |-----|--------|-------|
-| Co-1 | [ ] | **Unselected category cards do not dim after selection.** All 5 cards stay equally prominent — selection is unclear at a glance. Deselected cards should dim slightly. |
-| Co-2 | [ ] | **Calendar selected date uses shadcn default plum (`bg-primary`).** Clashes with gold theme — selected date should use gold or a coordinated accent. |
-| Co-3 | [ ] | **"Back" button on steps 2 & 3 has no visual weight.** Looks like plain text — needs a ghost border or subtle background to read as a button. |
-| Co-4 | [ ] | **Step dot connecting lines show on mobile even when labels are hidden.** Below `sm` breakpoint labels hide but lines remain, making the progress indicator look broken. |
+| Co-1 | [x] | **Unselected category cards do not dim after selection.** All 5 cards stay equally prominent — selection is unclear at a glance. Deselected cards should dim slightly. |
+| Co-2 | [x] | **Calendar selected date uses shadcn default plum (`bg-primary`).** Clashes with gold theme — selected date should use gold or a coordinated accent. |
+| Co-3 | [x] | **"Back" button on steps 2 & 3 has no visual weight.** Looks like plain text — needs a ghost border or subtle background to read as a button. |
+| Co-4 | [x] | **Step dot connecting lines show on mobile even when labels are hidden.** Below `sm` breakpoint labels hide but lines remain, making the progress indicator look broken. |
 
 ---
 

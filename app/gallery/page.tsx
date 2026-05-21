@@ -66,9 +66,7 @@ export default function GalleryPage() {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
   useScrollReveal(activeTab);
 
-  // When tab changes, strip in-view from grid items so they re-animate
   const handleTabChange = (tab: Category) => {
-    document.querySelectorAll(".gallery-item").forEach((el) => el.classList.remove("in-view"));
     setActiveTab(tab);
     setLightboxIndex(null);
   };
@@ -181,7 +179,7 @@ export default function GalleryPage() {
           >
             {filtered.map((img, i) => (
               <div
-                key={`${img.src}-${i}`}
+                key={`${activeTab}-${i}`}
                 className="fade-in-up gallery-item group relative overflow-hidden cursor-pointer"
                 style={{
                   gridRow: `span ${img.span}`,
@@ -256,17 +254,22 @@ export default function GalleryPage() {
             {/* Close */}
             <button
               onClick={closeLightbox}
-              className="absolute top-4 right-5 w-10 h-10 flex items-center justify-center text-[#8A7878] hover:text-white border border-[#2A1E2A] hover:border-[#C9A84C]/50 rounded-full transition-all duration-200"
-              aria-label="Close"
+              className="absolute top-4 right-4 sm:top-5 sm:right-6 w-12 h-12 sm:w-10 sm:h-10 flex items-center justify-center text-[#8A7878] hover:text-white bg-[#0A060A]/60 sm:bg-transparent border border-[#2A1E2A] hover:border-[#C9A84C]/50 rounded-full transition-all duration-200 z-10"
+              aria-label="Close lightbox"
             >
-              <X size={18} />
+              <X size={20} />
             </button>
 
             {/* Prev */}
             <button
               onClick={prev}
-              className="absolute left-4 top-1/2 -translate-y-1/2 w-11 h-11 flex items-center justify-center text-[#8A7878] hover:text-white border border-[#2A1E2A] hover:border-[#C9A84C]/50 rounded-full transition-all duration-200 hover:-translate-y-1/2 hover:scale-110"
-              aria-label="Previous"
+              disabled={lightboxIndex === 0}
+              className={`absolute left-4 top-1/2 -translate-y-1/2 w-11 h-11 flex items-center justify-center rounded-full border transition-all duration-200 ${
+                lightboxIndex === 0
+                  ? "text-[#3A2E3A] border-[#1E1420] opacity-40 cursor-not-allowed"
+                  : "text-[#8A7878] hover:text-white border-[#2A1E2A] hover:border-[#C9A84C]/50 hover:scale-110"
+              }`}
+              aria-label="Previous image"
             >
               <ChevronLeft size={20} />
             </button>
@@ -274,8 +277,13 @@ export default function GalleryPage() {
             {/* Next */}
             <button
               onClick={next}
-              className="absolute right-4 top-1/2 -translate-y-1/2 w-11 h-11 flex items-center justify-center text-[#8A7878] hover:text-white border border-[#2A1E2A] hover:border-[#C9A84C]/50 rounded-full transition-all duration-200 hover:scale-110"
-              aria-label="Next"
+              disabled={lightboxIndex === filtered.length - 1}
+              className={`absolute right-4 top-1/2 -translate-y-1/2 w-11 h-11 flex items-center justify-center rounded-full border transition-all duration-200 ${
+                lightboxIndex === filtered.length - 1
+                  ? "text-[#3A2E3A] border-[#1E1420] opacity-40 cursor-not-allowed"
+                  : "text-[#8A7878] hover:text-white border-[#2A1E2A] hover:border-[#C9A84C]/50 hover:scale-110"
+              }`}
+              aria-label="Next image"
             >
               <ChevronRight size={20} />
             </button>

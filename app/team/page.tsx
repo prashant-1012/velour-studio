@@ -44,7 +44,7 @@ function OwnerCard({ name, title, years, specialty, bio, img, alt, qualification
   return (
     <div
       className="relative cursor-pointer"
-      style={{ perspective: "1200px" }}
+      style={{ perspective: "1200px", transform: "translateZ(0)" }}
       onMouseEnter={() => setFlipped(true)}
       onMouseLeave={() => setFlipped(false)}
       onClick={() => setFlipped((f) => !f)}
@@ -69,7 +69,11 @@ function OwnerCard({ name, title, years, specialty, bio, img, alt, qualification
             <h3 className="text-3xl text-white mb-1" style={{ fontFamily: "var(--font-cormorant)", fontWeight: 300 }}>{name}</h3>
             <p className="text-sm text-white/50 mb-2">{title}</p>
             <p className="text-xs text-[#C9A84C]/70 tracking-wide">{specialty}</p>
-            <p className="text-[11px] text-white/30 mt-3 uppercase tracking-widest">Hover to learn more ↻</p>
+            <p className="text-[11px] text-white/55 mt-3 uppercase tracking-widest flex items-center gap-1.5">
+              <span className="hidden sm:inline">Hover</span>
+              <span className="sm:hidden">Tap</span>
+              <span>to flip ↻</span>
+            </p>
           </div>
         </div>
 
@@ -104,7 +108,7 @@ function OwnerCard({ name, title, years, specialty, bio, img, alt, qualification
             </ul>
             <Link
               href="/consultation"
-              className="inline-flex items-center gap-2 mt-6 text-xs font-semibold text-[#C9A84C] border-b border-[#C9A84C]/40 pb-0.5 hover:gap-3 transition-all duration-200"
+              className="inline-flex items-center gap-2 mt-6 text-xs font-semibold text-[#C9A84C] border-b border-[#C9A84C]/40 pb-0.5 hover:gap-3 hover:text-[#E0C06A] hover:border-[#E0C06A]/60 transition-all duration-200"
               onClick={(e) => e.stopPropagation()}
             >
               Book with {name.split(" ")[0]} <ArrowRight size={11} />
@@ -130,7 +134,7 @@ function StaffCard({ name, role, bio, funFact, avatarBg }: {
       onMouseLeave={() => setHovered(false)}
     >
       {/* Avatar strip */}
-      <div className="relative h-56 overflow-hidden">
+      <div className="relative h-56 overflow-hidden" style={{ transform: "translateZ(0)", isolation: "isolate" }}>
         <Image
           src={`https://ui-avatars.com/api/?name=${initials}&background=${avatarBg}&color=fff&size=400&font-size=0.35`}
           alt={name}

@@ -171,8 +171,8 @@ export default function AboutPage() {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {values.map((v, i) => (
-              <div key={i} className="card-dark fade-in-up rounded-2xl p-8 flex flex-col" style={{ transitionDelay:`${i*90}ms` }}>
-                <span className="text-[#C9A84C] text-xl mb-6 block">{v.icon}</span>
+              <div key={i} className="card-dark fade-in-up rounded-2xl p-8 flex flex-col group" style={{ transitionDelay:`${i*90}ms` }}>
+                <span className="text-[#C9A84C] text-xl mb-6 block transition-all duration-300 group-hover:scale-125 group-hover:rotate-12 inline-block w-fit">{v.icon}</span>
                 <h3 className="text-2xl text-[#F0E8DF] mb-3" style={{ fontFamily:"var(--font-cormorant)", fontWeight:400 }}>{v.title}</h3>
                 <p className="text-sm text-[#8A7878] leading-relaxed font-light flex-1">{v.desc}</p>
               </div>
@@ -198,7 +198,7 @@ export default function AboutPage() {
             </div>
             <div className="space-y-4">
               {certifications.map((cert, i) => (
-                <div key={i} className="card-premium fade-in-up flex items-start gap-5 p-6 rounded-xl" style={{ transitionDelay:`${i*80}ms` }}>
+                <div key={i} className="card-premium hover:!transform-none fade-in-up flex items-start gap-5 p-6 rounded-xl border-l-2 border-transparent hover:border-[#C9A84C] transition-all duration-200" style={{ transitionDelay:`${i*80}ms` }}>
                   <div className="w-10 h-10 rounded-lg bg-[#C9A84C]/10 flex items-center justify-center text-[#C9A84C] flex-shrink-0">
                     {cert.icon}
                   </div>
@@ -230,8 +230,8 @@ export default function AboutPage() {
 
           {/* Vertical gold line timeline */}
           <div className="relative">
-            {/* The vertical gold line */}
-            <div className="absolute left-[7px] top-2 bottom-2 w-px bg-gradient-to-b from-[#C9A84C]/60 via-[#C9A84C]/30 to-transparent sm:left-[calc(50%-1px)]"/>
+            {/* Vertical gold line — mobile: left-4 (16px, clear of dot), desktop: centered */}
+            <div className="absolute left-4 top-2 bottom-2 w-px bg-gradient-to-b from-[#C9A84C]/60 via-[#C9A84C]/30 to-transparent sm:left-[calc(50%-1px)]"/>
 
             <div className="space-y-0">
               {timeline.map((event, i) => {
@@ -244,11 +244,11 @@ export default function AboutPage() {
                     } flex-row`}
                     style={{ transitionDelay:`${i*100}ms` }}
                   >
-                    {/* Dot */}
-                    <div className="absolute left-0 sm:left-1/2 top-1.5 w-3.5 h-3.5 rounded-full bg-[#C9A84C] border-2 border-[#06030A] sm:-translate-x-1/2 z-10 flex-shrink-0"/>
+                    {/* Dot — mobile: absolute at left-4 center-aligned; desktop: centered on line */}
+                    <div className="absolute left-[9px] sm:left-1/2 top-1.5 w-4 h-4 rounded-full bg-[#C9A84C] border-2 border-[#06030A] sm:-translate-x-1/2 z-10 flex-shrink-0 shadow-[0_0_0_3px_rgba(201,168,76,0.2)]"/>
 
-                    {/* Content — offset for desktop */}
-                    <div className={`pl-8 sm:pl-0 sm:w-[calc(50%-2rem)] ${isRight ? "sm:pr-8 sm:text-right" : "sm:pl-8"}`}>
+                    {/* Content — mobile: offset right of the dot+line (pl-12); desktop: split layout */}
+                    <div className={`pl-12 sm:pl-0 sm:w-[calc(50%-2rem)] ${isRight ? "sm:pr-8 sm:text-right" : "sm:pl-8"}`}>
                       <span className="label-gold block mb-1">{event.year}</span>
                       <h3 className="text-xl text-[#F0E8DF] mb-2" style={{ fontFamily:"var(--font-cormorant)", fontWeight:400 }}>{event.title}</h3>
                       <p className="text-sm text-[#8A7878] leading-relaxed font-light">{event.desc}</p>

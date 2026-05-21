@@ -2,7 +2,7 @@
 
 A full-featured, premium beauty salon website built with Next.js 15, TypeScript, and Tailwind CSS. Designed for **Velour Studio** — a luxury unisex salon based in Baner, Pune — the site is built with an editorial aesthetic, dark/light theme support, and a fully responsive layout across all pages.
 
-> Live site: _coming soon_
+> Live site: [velourstudios.vercel.app](https://velourstudios.vercel.app)
 
 ---
 

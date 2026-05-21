@@ -2,6 +2,7 @@
 
 ## Reference
 - [DESIGN_UPGRADES.md](DESIGN_UPGRADES.md) — premium polish notes: typography scale, marquee strip, Ken Burns, whitespace, color restraint, per-page upgrade plan
+- [UI_ISSUES.md](UI_ISSUES.md) — full UI audit: 26 issues across all pages, prioritised by severity, with fix status tracking
 
 ## Steps
 
@@ -15,7 +16,7 @@
 - [x] Step 8 — Gallery Page
 - [x] Step 9 — Testimonials Page
 - [x] Step 10 — Contact Page
-- [ ] Step 11 — Consultation Page
+- [x] Step 11 — Consultation Page
 - [ ] Step 12 — Final Polish & Documentation
 
 ## Pages
@@ -27,7 +28,7 @@
 - [x] `/gallery` — The Velour Lookbook
 - [x] `/testimonials` — Client Reviews
 - [x] `/contact` — Get In Touch
-- [ ] `/consultation` — Request Consultation
+- [x] `/consultation` — Request Consultation
 
 ## Sections — Home Page
 

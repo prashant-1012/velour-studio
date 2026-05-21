@@ -28,10 +28,10 @@ Status legend: `[ ]` open · `[x]` fixed · `[-]` won't fix
 
 | ID  | Status | Issue |
 |-----|--------|-------|
-| H-1 | [ ] | **Floating stat card in hero is barely visible.** `bg-white/8` is nearly transparent; `text-[11px]` labels are too small. |
-| H-2 | [ ] | **Service preview cards: icon hover + card lift causes layout jitter.** Icon container `group-hover:bg-[#5B2D5E]` + card-premium translateY(-6px) together cause a stutter on tight grids. |
-| H-3 | [ ] | **Owner portrait cards give no signal they are clickable links.** No label, no "View Team" overlay, no cursor cue. Border appear on hover is too subtle for discoverability. |
-| H-4 | [ ] | **"Why Choose Us" number labels (01–06) too small and low contrast.** `text-xs text-[#C9A84C]` on dark background — needs larger size or higher opacity. |
+| H-1 | [x] | **Floating stat card in hero is barely visible.** `bg-white/8` is nearly transparent; `text-[11px]` labels are too small. |
+| H-2 | [x] | **Service preview cards: icon hover + card lift causes layout jitter.** Icon container `group-hover:bg-[#5B2D5E]` + card-premium translateY(-6px) together cause a stutter on tight grids. |
+| H-3 | [x] | **Owner portrait cards give no signal they are clickable links.** No label, no "View Team" overlay, no cursor cue. Border appear on hover is too subtle for discoverability. |
+| H-4 | [x] | **"Why Choose Us" number labels (01–06) too small and low contrast.** `text-xs text-[#C9A84C]` on dark background — needs larger size or higher opacity. |
 
 ---
 
@@ -39,9 +39,9 @@ Status legend: `[ ]` open · `[x]` fixed · `[-]` won't fix
 
 | ID  | Status | Issue |
 |-----|--------|-------|
-| S-1 | [ ] | **Sticky category tab indicator jumps on switch.** The active gold underline has no smooth transition — it snaps between tabs. |
-| S-2 | [ ] | **Flush service item rows have no visible hover state.** `card-flush` background diff (cream → slightly lighter cream) is imperceptible. No border or shadow cue on hover. |
-| S-3 | [ ] | **Featured category image has no fallback if URL fails to load.** No alt-text-driven placeholder or error state. |
+| S-1 | [x] | **Sticky category tab indicator jumps on switch.** The active gold underline has no smooth transition — it snaps between tabs. |
+| S-2 | [x] | **Flush service item rows have no visible hover state.** `card-flush` background diff (cream → slightly lighter cream) is imperceptible. No border or shadow cue on hover. |
+| S-3 | [x] | **Featured category image has no fallback if URL fails to load.** No alt-text-driven placeholder or error state. |
 
 ---
 

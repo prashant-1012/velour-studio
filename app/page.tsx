@@ -122,10 +122,10 @@ export default function HomePage() {
             </div>
           </div>
           {/* Floating stat */}
-          <div className="hidden lg:flex absolute right-12 bottom-28 items-center gap-4 bg-white/8 backdrop-blur-md border border-white/12 rounded-2xl px-6 py-4">
-            <div className="text-right"><p className="text-2xl font-semibold text-[#C9A84C]" style={{ fontFamily:"var(--font-cormorant)" }}>4.9★</p><p className="text-[11px] text-white/45 uppercase tracking-widest">Google Rating</p></div>
-            <div className="w-px h-10 bg-white/15"/>
-            <div className="text-right"><p className="text-2xl font-semibold text-white" style={{ fontFamily:"var(--font-cormorant)" }}>500+</p><p className="text-[11px] text-white/45 uppercase tracking-widest">Clients</p></div>
+          <div className="hidden lg:flex absolute right-12 bottom-28 items-center gap-4 bg-[#0A0608]/70 backdrop-blur-md border border-white/20 rounded-2xl px-6 py-4 shadow-xl">
+            <div className="text-right"><p className="text-2xl font-semibold text-[#C9A84C]" style={{ fontFamily:"var(--font-cormorant)" }}>4.9★</p><p className="text-xs text-white/60 uppercase tracking-widest">Google Rating</p></div>
+            <div className="w-px h-10 bg-white/20"/>
+            <div className="text-right"><p className="text-2xl font-semibold text-white" style={{ fontFamily:"var(--font-cormorant)" }}>500+</p><p className="text-xs text-white/60 uppercase tracking-widest">Happy Clients</p></div>
           </div>
         </div>
         <div className="absolute bottom-0 left-0 right-0 hairline-gold"/>
@@ -165,7 +165,7 @@ export default function HomePage() {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5">
             {serviceCategories.map((cat, i) => (
-              <Link key={i} href={`/services${cat.anchor}`} className="card-premium fade-in-up group flex flex-col p-7 rounded-2xl" style={{ transitionDelay:`${i*80}ms` }}>
+              <Link key={i} href={`/services${cat.anchor}`} className="card-premium hover:!transform-none fade-in-up group flex flex-col p-7 rounded-2xl" style={{ transitionDelay:`${i*80}ms` }}>
                 <div className="w-11 h-11 rounded-xl bg-[#5B2D5E]/8 dark:bg-[#9B5C9E]/15 flex items-center justify-center text-[#5B2D5E] dark:text-[#D4A5C9] mb-5 group-hover:bg-[#5B2D5E] group-hover:text-white transition-all duration-300">
                   {cat.icon}
                 </div>
@@ -199,7 +199,7 @@ export default function HomePage() {
             <div className="grid sm:grid-cols-2 gap-4">
               {whyUs.map((item, i) => (
                 <div key={i} className="card-dark fade-in-up rounded-xl p-6" style={{ transitionDelay:`${(i%2)*100}ms` }}>
-                  <span className="block text-[#C9A84C] text-xs mb-4 tracking-[0.2em]">0{i+1}</span>
+                  <span className="block text-[#C9A84C] text-sm font-medium mb-4 tracking-[0.2em]">0{i+1}</span>
                   <h3 className="text-xl text-[#F0E8DF] mb-2" style={{ fontFamily:"var(--font-cormorant)", fontWeight:400 }}>{item.title}</h3>
                   <p className="text-sm text-[#8A7878] leading-relaxed font-light">{item.desc}</p>
                 </div>
@@ -227,11 +227,17 @@ export default function HomePage() {
               { name:"Priya Kapoor", title:"Creative Director & Senior Hair Artist", specialty:"Balayage · Bridal Styling · Hair Coloring", years:"10 years experience", img:"https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=800&q=80", alt:"Priya Kapoor" },
               { name:"Rohan Kapoor", title:"Grooming & Skin Specialist", specialty:"Hydra Facial · Men's Grooming · Anti-Aging", years:"9 years experience", img:"https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=800&q=80", alt:"Rohan Kapoor" },
             ].map((person, i) => (
-              <div key={i} className="fade-in-up group relative overflow-hidden" style={{ transitionDelay:`${i*150}ms` }}>
+              <Link key={i} href="/team" className="fade-in-up group relative overflow-hidden cursor-pointer" style={{ transitionDelay:`${i*150}ms` }}>
                 <div className="relative overflow-hidden" style={{ aspectRatio:"3/4" }}>
                   <Image src={person.img} alt={person.alt} fill className="object-cover group-hover:scale-105 transition-transform duration-700"/>
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0A0608] via-[#0A0608]/20 to-transparent"/>
-                  <div className="absolute inset-0 border border-[#C9A84C]/0 group-hover:border-[#C9A84C]/40 transition-all duration-500"/>
+                  <div className="absolute inset-0 border border-[#C9A84C]/0 group-hover:border-[#C9A84C]/50 transition-all duration-500"/>
+                  {/* View Team overlay — appears on hover */}
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <span className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#C9A84C] text-[#1C1410] text-xs font-semibold tracking-wide shadow-lg">
+                      View Team <ArrowRight size={12}/>
+                    </span>
+                  </div>
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 p-7">
                   <p className="label-gold mb-1.5">{person.years}</p>
@@ -239,7 +245,7 @@ export default function HomePage() {
                   <p className="text-sm text-white/50 mb-1">{person.title}</p>
                   <p className="text-xs text-[#C9A84C]/70 tracking-wide">{person.specialty}</p>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

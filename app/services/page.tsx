@@ -118,7 +118,14 @@ type CategoryId = keyof typeof services;
 ════════════════════════════════════════════════════════════ */
 export default function ServicesPage() {
   const [active, setActive] = useState<CategoryId>("hair");
+  const [imgError, setImgError] = useState(false);
   useScrollReveal();
+
+  // Reset image error state when category changes
+  const handleCategoryChange = (id: CategoryId) => {
+    setImgError(false);
+    setActive(id);
+  };
 
   const current = services[active];
 
@@ -176,21 +183,26 @@ export default function ServicesPage() {
         style={{ background: "#0F0A0F" }}
       >
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-          <div className="flex overflow-x-auto scrollbar-hide -mb-px">
+          <div className="flex overflow-x-auto scrollbar-hide">
             {categories.map((cat) => (
               <button
                 key={cat.id}
-                onClick={() => setActive(cat.id as CategoryId)}
-                className={`flex items-center gap-2 px-5 py-4 text-sm font-medium whitespace-nowrap border-b-2 transition-all duration-200 flex-shrink-0 ${
+                onClick={() => handleCategoryChange(cat.id as CategoryId)}
+                className={`relative flex items-center gap-2 px-5 py-4 text-sm font-medium whitespace-nowrap flex-shrink-0 transition-colors duration-200 ${
                   active === cat.id
-                    ? "border-[#C9A84C] text-[#C9A84C]"
-                    : "border-transparent text-[#7A6A60] hover:text-[#9A8A80]"
+                    ? "text-[#C9A84C]"
+                    : "text-[#7A6A60] hover:text-[#9A8A80]"
                 }`}
               >
-                <span className={active === cat.id ? "text-[#C9A84C]" : "text-[#7A6A60]"}>
+                <span className={`transition-colors duration-200 ${active === cat.id ? "text-[#C9A84C]" : "text-[#7A6A60]"}`}>
                   {cat.icon}
                 </span>
                 {cat.label}
+                {/* Sliding underline per-tab — fades in/out smoothly */}
+                <span
+                  className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#C9A84C] transition-all duration-300"
+                  style={{ opacity: active === cat.id ? 1 : 0, transform: active === cat.id ? "scaleX(1)" : "scaleX(0)", transformOrigin: "left" }}
+                />
               </button>
             ))}
           </div>
@@ -228,12 +240,20 @@ export default function ServicesPage() {
 
             {/* Featured image — tall portrait */}
             <div className="fade-in-up delay-100 relative overflow-hidden" style={{ aspectRatio: "3/4", maxHeight: "480px" }}>
-              <Image
-                src={current.image}
-                alt={`Velour Studio ${active} services`}
-                fill
-                className="object-cover"
-              />
+              {imgError ? (
+                <div className="absolute inset-0 bg-[#EDE8E3] flex flex-col items-center justify-center gap-3">
+                  <span className="text-4xl text-[#C9A84C]/40">✦</span>
+                  <p className="text-xs text-[#7A6A60] uppercase tracking-[0.2em]">{categories.find(c => c.id === active)?.label}</p>
+                </div>
+              ) : (
+                <Image
+                  src={current.image}
+                  alt={`Velour Studio ${active} services`}
+                  fill
+                  className="object-cover"
+                  onError={() => setImgError(true)}
+                />
+              )}
               <div className="absolute inset-0 bg-gradient-to-t from-[#1C1410]/40 to-transparent" />
               {/* Gold hairline */}
               <div className="absolute inset-0 border border-[#C9A84C]/20" />
@@ -248,7 +268,7 @@ export default function ServicesPage() {
             {current.items.map((service, i) => (
               <div
                 key={i}
-                className="fade-in-up group flex flex-col p-8 bg-[#FAF6F1] hover:bg-white transition-colors duration-300"
+                className="fade-in-up group flex flex-col p-8 bg-[#FAF6F1] hover:bg-white transition-all duration-300 relative border-l-2 border-transparent hover:border-[#C9A84C] hover:shadow-[4px_0_0_0_#C9A84C]"
                 style={{ transitionDelay: `${i * 80}ms` }}
               >
                 {/* Icon */}

@@ -142,7 +142,7 @@ export default function ContactPage() {
                       placeholder="Priya Sharma"
                       value={form.name}
                       onChange={(e) => setForm({ ...form, name: e.target.value })}
-                      className="bg-white dark:bg-[#160D16] border-[#DDD0C8] dark:border-[#2A1E2A] focus:border-[#C9A84C] focus:ring-[#C9A84C]/20 h-11 rounded-xl text-sm"
+                      className="bg-white dark:bg-[#160D16] border-[#DDD0C8] dark:border-[#2A1E2A] focus:border-[#C9A84C] focus:ring-[#C9A84C]/40 h-11 rounded-xl text-sm"
                     />
                   </div>
                   <div className="space-y-2">
@@ -152,7 +152,7 @@ export default function ContactPage() {
                       placeholder="+91 98765 43210"
                       value={form.phone}
                       onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                      className="bg-white dark:bg-[#160D16] border-[#DDD0C8] dark:border-[#2A1E2A] focus:border-[#C9A84C] focus:ring-[#C9A84C]/20 h-11 rounded-xl text-sm"
+                      className="bg-white dark:bg-[#160D16] border-[#DDD0C8] dark:border-[#2A1E2A] focus:border-[#C9A84C] focus:ring-[#C9A84C]/40 h-11 rounded-xl text-sm"
                     />
                   </div>
                 </div>
@@ -166,7 +166,7 @@ export default function ContactPage() {
                     placeholder="you@example.com"
                     value={form.email}
                     onChange={(e) => setForm({ ...form, email: e.target.value })}
-                    className="bg-white dark:bg-[#160D16] border-[#DDD0C8] dark:border-[#2A1E2A] focus:border-[#C9A84C] focus:ring-[#C9A84C]/20 h-11 rounded-xl text-sm"
+                    className="bg-white dark:bg-[#160D16] border-[#DDD0C8] dark:border-[#2A1E2A] focus:border-[#C9A84C] focus:ring-[#C9A84C]/40 h-11 rounded-xl text-sm"
                   />
                 </div>
 
@@ -194,7 +194,7 @@ export default function ContactPage() {
                     rows={5}
                     value={form.message}
                     onChange={(e) => setForm({ ...form, message: e.target.value })}
-                    className="bg-white dark:bg-[#160D16] border-[#DDD0C8] dark:border-[#2A1E2A] focus:border-[#C9A84C] focus:ring-[#C9A84C]/20 rounded-xl text-sm resize-none"
+                    className="bg-white dark:bg-[#160D16] border-[#DDD0C8] dark:border-[#2A1E2A] focus:border-[#C9A84C] focus:ring-[#C9A84C]/40 rounded-xl text-sm resize-none"
                   />
                 </div>
 
@@ -231,7 +231,7 @@ export default function ContactPage() {
               {/* Contact details */}
               <div className="space-y-4">
                 {contactDetails.map((d, i) => (
-                  <div key={i} className="card-premium rounded-xl p-5 flex items-start gap-4">
+                  <div key={i} className="card-premium rounded-xl p-5 flex items-start gap-4 hover:!transform-none hover:border-[#C9A84C]/30">
                     <div className="w-9 h-9 rounded-lg bg-[#C9A84C]/10 flex items-center justify-center text-[#C9A84C] flex-shrink-0 mt-0.5">
                       {d.icon}
                     </div>
@@ -264,7 +264,7 @@ export default function ContactPage() {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={label}
-                      className="flex items-center gap-2.5 px-4 py-2.5 rounded-full border border-[#DDD0C8] dark:border-[#2A1E2A] text-[#7A6A60] dark:text-[#8A7878] hover:text-[#C9A84C] hover:border-[#C9A84C]/50 text-sm font-medium transition-all duration-200"
+                      className="flex items-center gap-2.5 px-4 py-2.5 rounded-full border border-[#DDD0C8] dark:border-[#2A1E2A] text-[#7A6A60] dark:text-[#8A7878] hover:text-[#1C1410] dark:hover:text-[#1C1410] hover:bg-[#C9A84C] hover:border-[#C9A84C] text-sm font-medium transition-all duration-200"
                     >
                       {icon}
                       <span className="text-xs">{label}</span>
@@ -273,8 +273,8 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              {/* Fake map */}
-              <div className="card-dark rounded-xl overflow-hidden relative h-52">
+              {/* Fake map — decorative, no hover interaction */}
+              <div className="rounded-xl overflow-hidden relative h-52 bg-[#170F17] border border-[#2E2030] shadow-[0_2px_16px_rgba(0,0,0,0.3)]">
                 {/* Grid lines */}
                 <div className="absolute inset-0"
                   style={{

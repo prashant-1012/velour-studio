@@ -8,8 +8,8 @@ Status legend: `[ ]` open · `[x]` fixed · `[-]` won't fix
 
 | ID  | Status | Issue |
 |-----|--------|-------|
-| N-1 | [ ] | **Text invisible on light pages at top of scroll.** Nav links are `text-[#7A6A60]` on transparent background — readable over dark hero images, but invisible on light-background pages (Services, About, Contact) until scrolled. Fix: always give navbar a dark-to-transparent gradient behind it on transparent state, or switch link color based on scroll. |
-| N-2 | [ ] | **Logo text color on transparent state.** Logo is `text-[#1C1410]` (dark) — invisible over dark hero images (Home, Gallery hero). |
+| N-1 | [x] | **Text invisible on light pages at top of scroll.** Nav links are `text-[#7A6A60]` on transparent background — readable over dark hero images, but invisible on light-background pages (Services, About, Contact) until scrolled. Fix: always give navbar a dark-to-transparent gradient behind it on transparent state, or switch link color based on scroll. |
+| N-2 | [x] | **Logo text color on transparent state.** Logo is `text-[#1C1410]` (dark) — invisible over dark hero images (Home, Gallery hero). |
 
 ---
 
@@ -17,10 +17,10 @@ Status legend: `[ ]` open · `[x]` fixed · `[-]` won't fix
 
 | ID  | Status | Issue |
 |-----|--------|-------|
-| C-1 | [ ] | **Social pills (Instagram, Facebook, WhatsApp) have no visible hover.** `hover:text-[#C9A84C]` and `hover:border-[#C9A84C]/50` are overridden by the global `a { transition: all }`. Pills feel flat — need a background fill on hover. |
-| C-2 | [ ] | **Contact detail cards (card-premium) bounce on hover.** Info cards with an address/phone should not lift like a CTA card. Hover should be subtler — border glow only, no translateY. |
-| C-3 | [ ] | **Fake map card-dark lifts on hover.** A decorative element should not have pointer interaction effects. |
-| C-4 | [ ] | **Form inputs: focus ring barely visible.** `focus:ring-[#C9A84C]/20` is near-invisible. Gold border appears but ring needs more opacity. |
+| C-1 | [x] | **Social pills (Instagram, Facebook, WhatsApp) have no visible hover.** `hover:text-[#C9A84C]` and `hover:border-[#C9A84C]/50` are overridden by the global `a { transition: all }`. Pills feel flat — need a background fill on hover. |
+| C-2 | [x] | **Contact detail cards (card-premium) bounce on hover.** Info cards with an address/phone should not lift like a CTA card. Hover should be subtler — border glow only, no translateY. |
+| C-3 | [x] | **Fake map card-dark lifts on hover.** A decorative element should not have pointer interaction effects. |
+| C-4 | [x] | **Form inputs: focus ring barely visible.** `focus:ring-[#C9A84C]/20` is near-invisible. Gold border appears but ring needs more opacity. |
 
 ---
 
@@ -99,7 +99,7 @@ Status legend: `[ ]` open · `[x]` fixed · `[-]` won't fix
 
 | Priority | Count | IDs |
 |----------|-------|-----|
-| Critical (visibility) | 2 | N-1, N-2 |
+| Critical (visibility) | 2 | ~~N-1, N-2~~ ✅ |
 | High (broken interaction) | 5 | C-1, C-2, C-3, G-1, Co-2 |
 | Medium (missing feedback) | 11 | C-4, H-1, H-2, H-3, S-1, S-2, T-1, T-3, G-2, G-3, Co-1 |
 | Low (polish) | 8 | H-4, A-1, A-2, A-3, T-2, Te-1, Te-2, Co-3, Co-4 |

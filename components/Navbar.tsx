@@ -45,13 +45,36 @@ export default function Navbar() {
   const isActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname.startsWith(href);
 
+  // Pages with full-bleed dark hero images — logo/links need light colors when transparent
+  const darkHeroPages = ["/", "/gallery"];
+  const hasDarkHero = darkHeroPages.includes(pathname);
+
+  const logoColor = scrolled
+    ? "text-[#1C1410] dark:text-[#F5EFE8]"
+    : hasDarkHero
+    ? "text-[#F5EFE8]"
+    : "text-[#1C1410] dark:text-[#F5EFE8]";
+
+  const linkColor = (active: boolean) => {
+    // On dark-hero pages when navbar is transparent — always use light text (works for both themes)
+    if (!scrolled && hasDarkHero) {
+      return active ? "text-[#C9A84C]" : "text-[#E8E0D8]/90 hover:text-white";
+    }
+    // Scrolled or light-bg pages — use theme-aware colors
+    return active
+      ? "text-[#5B2D5E] dark:text-[#D4A5C9]"
+      : "text-[#4A3A30] dark:text-[#C8B8C0] hover:text-[#5B2D5E] dark:hover:text-[#D4A5C9]";
+  };
+
   return (
     <>
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled
             ? "backdrop-blur-md bg-[#FAF6F1]/80 dark:bg-[#0F0A0F]/80 shadow-sm border-b border-[#DDD0C8]/60 dark:border-[#2E2030]/60"
-            : "bg-transparent"
+            : hasDarkHero
+            ? "bg-transparent"
+            : "bg-[#FAF6F1]/70 dark:bg-[#0F0A0F]/70 backdrop-blur-sm"
         }`}
       >
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -86,7 +109,7 @@ export default function Navbar() {
                 />
               </svg>
               <span
-                className="text-xl lg:text-2xl font-semibold tracking-wide text-[#1C1410] dark:text-[#F5EFE8]"
+                className={`text-xl lg:text-2xl font-semibold tracking-wide transition-colors duration-300 ${logoColor}`}
                 style={{ fontFamily: "var(--font-cormorant)" }}
               >
                 Velour Studio
@@ -99,11 +122,7 @@ export default function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`px-3 py-2 text-sm font-medium rounded-md transition-all duration-200 ${
-                    isActive(link.href)
-                      ? "text-[#5B2D5E] dark:text-[#D4A5C9]"
-                      : "text-[#7A6A60] dark:text-[#9A8A80] hover:text-[#5B2D5E] dark:hover:text-[#D4A5C9]"
-                  }`}
+                  className={`px-3 py-2 text-sm font-medium rounded-md transition-all duration-200 ${linkColor(isActive(link.href))}`}
                 >
                   {link.label}
                   {isActive(link.href) && (
@@ -118,7 +137,7 @@ export default function Navbar() {
               {mounted && (
                 <button
                   onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-                  className="p-2 rounded-full text-[#7A6A60] dark:text-[#9A8A80] hover:text-[#5B2D5E] dark:hover:text-[#D4A5C9] hover:bg-[#EDE8E3] dark:hover:bg-[#1E1520] transition-all duration-200"
+                  className={`p-2 rounded-full transition-all duration-200 hover:bg-[#EDE8E3]/50 dark:hover:bg-[#1E1520]/50 ${!scrolled && hasDarkHero ? "text-[#E8E0D8] hover:text-white" : "text-[#7A6A60] dark:text-[#C8B8C0] hover:text-[#5B2D5E] dark:hover:text-[#D4A5C9]"}`}
                   aria-label="Toggle theme"
                 >
                   {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
@@ -137,7 +156,7 @@ export default function Navbar() {
               {mounted && (
                 <button
                   onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-                  className="p-2 rounded-full text-[#7A6A60] dark:text-[#9A8A80] hover:bg-[#EDE8E3] dark:hover:bg-[#1E1520] transition-all duration-200"
+                  className={`p-2 rounded-full transition-all duration-200 hover:bg-[#EDE8E3]/50 dark:hover:bg-[#1E1520]/50 ${!scrolled && hasDarkHero ? "text-[#E8E0D8]" : "text-[#7A6A60] dark:text-[#C8B8C0]"}`}
                   aria-label="Toggle theme"
                 >
                   {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}

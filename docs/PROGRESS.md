@@ -13,7 +13,7 @@
 - [x] Step 6 — About Page
 - [x] Step 7 — Team Page
 - [x] Step 8 — Gallery Page
-- [ ] Step 9 — Testimonials Page
+- [x] Step 9 — Testimonials Page
 - [ ] Step 10 — Contact Page
 - [ ] Step 11 — Consultation Page
 - [ ] Step 12 — Final Polish & Documentation
@@ -25,7 +25,7 @@
 - [x] `/about` — About Velour Studio
 - [x] `/team` — Meet Our Team
 - [x] `/gallery` — The Velour Lookbook
-- [ ] `/testimonials` — Client Reviews
+- [x] `/testimonials` — Client Reviews
 - [ ] `/contact` — Get In Touch
 - [ ] `/consultation` — Request Consultation
 

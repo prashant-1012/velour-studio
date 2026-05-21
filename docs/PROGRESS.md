@@ -14,7 +14,7 @@
 - [x] Step 7 — Team Page
 - [x] Step 8 — Gallery Page
 - [x] Step 9 — Testimonials Page
-- [ ] Step 10 — Contact Page
+- [x] Step 10 — Contact Page
 - [ ] Step 11 — Consultation Page
 - [ ] Step 12 — Final Polish & Documentation
 
@@ -26,7 +26,7 @@
 - [x] `/team` — Meet Our Team
 - [x] `/gallery` — The Velour Lookbook
 - [x] `/testimonials` — Client Reviews
-- [ ] `/contact` — Get In Touch
+- [x] `/contact` — Get In Touch
 - [ ] `/consultation` — Request Consultation
 
 ## Sections — Home Page

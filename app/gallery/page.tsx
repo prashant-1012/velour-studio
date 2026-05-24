@@ -39,21 +39,21 @@ interface GalleryImage {
 }
 
 const images: GalleryImage[] = [
-  { src: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800&q=85", alt: "Balayage hair transformation", category: "Hair", span: 3 },
-  { src: "https://images.unsplash.com/photo-1519741497674-611481863552?w=800&q=85", alt: "Bridal makeup artistry", category: "Bridal", span: 2 },
+  { src: "https://images.unsplash.com/photo-1635273051937-a0ddef9573b6?w=800&q=85", alt: "Man getting hair cut by a barber", category: "Hair", span: 3 },
+  { src: "https://images.unsplash.com/photo-1684868268327-7e5590bcfbd6?w=800&q=85", alt: "Bridal makeup artistry", category: "Bridal", span: 2 },
   { src: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=800&q=85", alt: "Hydra facial skin treatment", category: "Skin", span: 2 },
   { src: "https://images.unsplash.com/photo-1604654894610-df63bc536371?w=800&q=85", alt: "Nail art close-up", category: "Nails", span: 3 },
   { src: "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=800&q=85", alt: "Beauty portrait", category: "Skin", span: 2 },
-  { src: "https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=800&q=85", alt: "Men's grooming session", category: "Men's", span: 2 },
-  { src: "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800&q=85", alt: "Salon interior", category: "Hair", span: 2 },
-  { src: "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=800&q=85", alt: "Makeup artistry close-up", category: "Bridal", span: 3 },
-  { src: "https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=800&q=85", alt: "Hair styling scissors", category: "Hair", span: 2 },
+  { src: "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=800&q=85", alt: "Men's grooming session", category: "Men's", span: 2 },
+  { src: "https://images.unsplash.com/photo-1672788694268-ecc234591d31?w=800&q=85", alt: "Woman getting her hair styled", category: "Hair", span: 2 },
+  { src: "https://images.unsplash.com/flagged/photo-1551854716-8b811be39e7e?w=800&q=85", alt: "Bridal look full glam", category: "Bridal", span: 3 },
+  { src: "https://images.unsplash.com/photo-1675034741473-afed58a142e8?w=800&q=85", alt: "Woman cutting another woman's hair in a salon", category: "Hair", span: 2 },
   { src: "https://images.unsplash.com/photo-1562322140-8baeececf3df?w=800&q=85", alt: "Spa skincare ritual", category: "Skin", span: 2 },
-  { src: "https://images.unsplash.com/photo-1519014816548-bf5fe059798b?w=800&q=85", alt: "Hair blow dry styling", category: "Hair", span: 3 },
+  { src: "https://plus.unsplash.com/premium_photo-1676809172626-34d0538cc8e5?w=800&q=85", alt: "Woman getting her hair done in a salon", category: "Hair", span: 3 },
   { src: "https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=800&q=85", alt: "Gel nail art detail", category: "Nails", span: 2 },
-  { src: "https://images.unsplash.com/photo-1600334129128-685c5582fd35?w=800&q=85", alt: "Hair colour application", category: "Hair", span: 2 },
-  { src: "https://images.unsplash.com/photo-1614174486260-a70ef2d64c77?w=800&q=85", alt: "Bridal eye makeup", category: "Bridal", span: 2 },
-  { src: "https://images.unsplash.com/photo-1583001931096-959e9a1a6223?w=800&q=85", alt: "Men's beard grooming", category: "Men's", span: 3 },
+  { src: "https://plus.unsplash.com/premium_photo-1664048713117-bf8a405e4933?w=800&q=85", alt: "Woman cutting another woman's hair in a salon", category: "Hair", span: 2 },
+  { src: "https://images.unsplash.com/photo-1740674570259-a47d713a2976?w=800&q=85", alt: "Bridal hair styling", category: "Bridal", span: 2 },
+  { src: "https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=800&q=85", alt: "Men's beard grooming", category: "Men's", span: 3 },
 ];
 
 const tabs: Category[] = ["All", "Hair", "Skin", "Nails", "Bridal", "Men's"];

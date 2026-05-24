@@ -82,9 +82,9 @@ const whyUs = [
 ];
 
 const testimonials = [
-  { name: "Ananya Sharma", rating: 5, treatment: "Balayage", text: "Priya made the whole experience completely stress-free. She spent 20 minutes understanding what I wanted before picking up a brush. The result was better than anything I'd seen on Pinterest.", date: "April 2025" },
-  { name: "Rahul Desai", rating: 5, treatment: "Men's Grooming", text: "Rohan's beard styling and face cleanup combo is genuinely the best grooming experience I've had in Pune. The studio is clean, relaxed, and they actually take their time.", date: "March 2025" },
-  { name: "Kavya Reddy", rating: 5, treatment: "Gel Nail Art", text: "Neha is an absolute artist. I showed her a reference and she freestyled on it and made it even better. The gel has lasted three weeks with no chips at all.", date: "May 2025" },
+  { name: "Ananya Sharma", rating: 5, treatment: "Balayage", text: "Priya made the whole experience completely stress-free. She spent 20 minutes understanding what I wanted before picking up a brush. The result was better than anything I'd seen on Pinterest.", date: "April 2025", avatar: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&q=90" },
+  { name: "Rahul Desai", rating: 5, treatment: "Men's Grooming", text: "Rohan's beard styling and face cleanup combo is genuinely the best grooming experience I've had in Pune. The studio is clean, relaxed, and they actually take their time.", date: "March 2025", avatar: "https://images.unsplash.com/photo-1598966739654-5e9a252d8c32?w=400&q=90" },
+  { name: "Kavya Reddy", rating: 5, treatment: "Gel Nail Art", text: "Neha is an absolute artist. I showed her a reference and she freestyled on it and made it even better. The gel has lasted three weeks with no chips at all.", date: "May 2025", avatar: "https://plus.unsplash.com/premium_photo-1723773715903-fed95064c2ef?w=400&q=90" },
 ];
 
 export default function HomePage() {
@@ -224,8 +224,8 @@ export default function HomePage() {
 
           <div className="grid md:grid-cols-2 gap-6">
             {[
-              { name:"Priya Kapoor", title:"Creative Director & Senior Hair Artist", specialty:"Balayage · Bridal Styling · Hair Coloring", years:"10 years experience", img:"https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=800&q=80", alt:"Priya Kapoor" },
-              { name:"Rohan Kapoor", title:"Grooming & Skin Specialist", specialty:"Hydra Facial · Men's Grooming · Anti-Aging", years:"9 years experience", img:"https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=800&q=80", alt:"Rohan Kapoor" },
+              { name:"Priya Kapoor", title:"Creative Director & Senior Hair Artist", specialty:"Balayage · Bridal Styling · Hair Coloring", years:"10 years experience", img:"https://plus.unsplash.com/premium_photo-1708271598114-5e6e8892a2ad?w=800&q=80", alt:"Priya Kapoor" },
+              { name:"Rohan Kapoor", title:"Grooming & Skin Specialist", specialty:"Hydra Facial · Men's Grooming · Anti-Aging", years:"9 years experience", img:"https://plus.unsplash.com/premium_photo-1779194564446-ed5059f6cc3f?w=800&q=80", alt:"Rohan Kapoor" },
             ].map((person, i) => (
               <Link key={i} href="/team" className="fade-in-up group relative overflow-hidden cursor-pointer" style={{ transitionDelay:`${i*150}ms` }}>
                 <div className="relative overflow-hidden" style={{ aspectRatio:"3/4" }}>
@@ -276,9 +276,14 @@ export default function HomePage() {
                   &ldquo;{t.text}&rdquo;
                 </p>
                 <div className="mt-7 pt-5 border-t border-[#2A1E2A] flex items-center justify-between">
-                  <div>
-                    <p className="text-sm font-semibold text-[#F0E8DF]">{t.name}</p>
-                    <p className="text-xs text-[#C9A84C] mt-0.5 tracking-wide">{t.treatment}</p>
+                  <div className="flex items-center gap-3">
+                    <div className="relative w-10 h-10 rounded-full overflow-hidden ring-2 ring-[#C9A84C]/30 flex-shrink-0">
+                      <Image src={t.avatar} alt={t.name} fill className="object-cover" sizes="80px" />
+                    </div>
+                    <div>
+                      <p className="text-sm font-semibold text-[#F0E8DF]">{t.name}</p>
+                      <p className="text-xs text-[#C9A84C] mt-0.5 tracking-wide">{t.treatment}</p>
+                    </div>
                   </div>
                   <p className="text-xs text-[#8A7878]">{t.date}</p>
                 </div>

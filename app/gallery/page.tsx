@@ -44,7 +44,7 @@ const images: GalleryImage[] = [
   { src: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=800&q=85", alt: "Man wearing mud mask", category: "Skin", span: 2 },
   { src: "https://images.unsplash.com/photo-1690749138086-7422f71dc159?w=800&q=85", alt: "Manicure on a child's hand", category: "Nails", span: 3 },
   { src: "https://images.unsplash.com/photo-1713085085470-fba013d67e65?w=800&q=85", alt: "Woman getting a facial peel", category: "Skin", span: 2 },
-  { src: "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=800&q=85", alt: "Men's grooming session", category: "Men's", span: 2 },
+  { src: "https://plus.unsplash.com/premium_photo-1779194564039-e2953d8a94ba?w=800&q=85", alt: "Barber styling a man's hair with a hairdryer", category: "Men's", span: 2 },
   { src: "https://images.unsplash.com/photo-1672788694268-ecc234591d31?w=800&q=85", alt: "Woman getting her hair styled", category: "Hair", span: 2 },
   { src: "https://images.unsplash.com/flagged/photo-1551854716-8b811be39e7e?w=800&q=85", alt: "Bridal look full glam", category: "Bridal", span: 3 },
   { src: "https://images.unsplash.com/photo-1675034741473-afed58a142e8?w=800&q=85", alt: "Woman cutting another woman's hair in a salon", category: "Hair", span: 2 },
@@ -55,7 +55,8 @@ const images: GalleryImage[] = [
   { src: "https://plus.unsplash.com/premium_photo-1661499249417-c20d6b668469?w=800&q=85", alt: "Nail artist working on pedicure", category: "Nails", span: 2 },
   { src: "https://plus.unsplash.com/premium_photo-1664048713117-bf8a405e4933?w=800&q=85", alt: "Woman cutting another woman's hair in a salon", category: "Hair", span: 2 },
   { src: "https://images.unsplash.com/photo-1740674570259-a47d713a2976?w=800&q=85", alt: "Bridal hair styling", category: "Bridal", span: 2 },
-  { src: "https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=800&q=85", alt: "Men's beard grooming", category: "Men's", span: 3 },
+  { src: "https://plus.unsplash.com/premium_photo-1779194564260-7f17f472c5b4?w=800&q=85", alt: "Barber cutting a client's hair in a modern barbershop", category: "Men's", span: 2 },
+  { src: "https://plus.unsplash.com/premium_photo-1661326313073-660261bc78e7?w=800&q=85", alt: "Barber grooming man's beard and haircut", category: "Men's", span: 3 },
 ];
 
 const tabs: Category[] = ["All", "Hair", "Skin", "Nails", "Bridal", "Men's"];
@@ -102,7 +103,8 @@ export default function GalleryPage() {
       <section className="relative h-[70vh] min-h-[540px] flex items-end overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
           <Image
-            src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=1600&q=90"
+            // src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=1600&q=90"
+            src="https://plus.unsplash.com/premium_photo-1664048713117-cee94e5048a0?w=1600&q=90"
             alt="Velour Studio lookbook"
             fill
             className="object-cover"

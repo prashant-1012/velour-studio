@@ -121,22 +121,23 @@ function OwnerCard({ name, title, years, specialty, bio, img, alt, qualification
 }
 
 /* ── Staff card ─────────────────────────────────────────── */
-function StaffCard({ name, role, bio, funFact, avatarBg }: {
-  name: string; role: string; bio: string; funFact: string; avatarBg: string;
+function StaffCard({ name, role, bio, funFact, avatarBg, image }: {
+  name: string; role: string; bio: string; funFact: string; avatarBg: string; image?: string;
 }) {
   const [hovered, setHovered] = useState(false);
   const initials = name.split(" ").map((n) => n[0]).join("+");
+  const src = image ?? `https://ui-avatars.com/api/?name=${initials}&background=${avatarBg}&color=fff&size=400&font-size=0.35`;
 
   return (
     <div
-      className="card-premium rounded-2xl overflow-hidden"
+      className="card-premium rounded-2xl overflow-hidden flex flex-col h-full"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
       {/* Avatar strip */}
       <div className="relative h-56 overflow-hidden" style={{ transform: "translateZ(0)", isolation: "isolate" }}>
         <Image
-          src={`https://ui-avatars.com/api/?name=${initials}&background=${avatarBg}&color=fff&size=400&font-size=0.35`}
+          src={src}
           alt={name}
           fill
           className="object-cover transition-transform duration-500"
@@ -152,14 +153,14 @@ function StaffCard({ name, role, bio, funFact, avatarBg }: {
       </div>
 
       {/* Content */}
-      <div className="p-6">
+      <div className="p-6 flex flex-col flex-1">
         <h3
           className="text-2xl text-[#1C1410] dark:text-[#F0E8DF] mb-3"
           style={{ fontFamily: "var(--font-cormorant)", fontWeight: 400 }}
         >
           {name}
         </h3>
-        <p className="text-sm text-[#7A6A60] dark:text-[#8A7878] leading-relaxed font-light mb-5">
+        <p className="text-sm text-[#7A6A60] dark:text-[#8A7878] leading-relaxed font-light mb-5 flex-1">
           {bio}
         </p>
 
@@ -298,6 +299,7 @@ export default function TeamPage() {
                 bio: "Neha specialises in intricate nail art and gel extensions, blending minimalist aesthetics with bold statement pieces. She trained under master nail technicians in Mumbai and has been with Velour Studio since 2019.",
                 funFact: "Her marble-effect gel manicures are always booked two weeks in advance.",
                 avatarBg: "5B2D5E",
+                image: "https://plus.unsplash.com/premium_photo-1708271598244-ba0c3ef2214f?w=800&q=85",
               },
               {
                 name: "Arjun Mehta",
@@ -305,6 +307,7 @@ export default function TeamPage() {
                 bio: "Arjun is a certified aesthetician with expertise in hydra-facial, de-tan, and anti-acne protocols. Known for thorough skin consultations and his ability to find the right treatment for every skin type.",
                 funFact: "His gold facial ritual takes 45 minutes but clients say the glow lasts for weeks.",
                 avatarBg: "C9A84C",
+                image: "https://plus.unsplash.com/premium_photo-1661328131020-f0db94fefa30?w=800&q=85",
               },
               {
                 name: "Simran Kaur",
@@ -312,9 +315,10 @@ export default function TeamPage() {
                 bio: "Simran joined Velour Studio from the VLCC cosmetology program and has quickly built a loyal following for her effortless blowouts and precise cuts. She assists Priya on all bridal bookings.",
                 funFact: "Her 30-minute express blowout is the studio's most popular lunchtime booking.",
                 avatarBg: "8B5E8A",
+                image: "https://images.unsplash.com/photo-1649885345514-cbf10e8ffd56?w=800&q=85",
               },
             ].map((staff, i) => (
-              <div key={i} className="fade-in-up" style={{ transitionDelay: `${i * 100}ms` }}>
+              <div key={i} className="fade-in-up h-full" style={{ transitionDelay: `${i * 100}ms` }}>
                 <StaffCard {...staff} />
               </div>
             ))}

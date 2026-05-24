@@ -212,8 +212,7 @@ export default function ServicesPage() {
       {/* ── ACTIVE CATEGORY SECTION ──────────────────────── */}
       <section
         id={active}
-        className="py-24 lg:py-36"
-        style={{ background: "linear-gradient(160deg, #FAF6F1 0%, #EDE8E3 50%, #FAF6F1 100%)" }}
+        className="py-24 lg:py-36 bg-[#FAF6F1] dark:bg-[#0F0A0F]"
       >
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
           {/* Section header — two column */}
@@ -223,7 +222,7 @@ export default function ServicesPage() {
                 {categories.find((c) => c.id === active)?.label}
               </p>
               <h2
-                className="fade-in-up delay-100 text-5xl lg:text-6xl xl:text-7xl text-[#1C1410]"
+                className="fade-in-up delay-100 text-5xl lg:text-6xl xl:text-7xl text-[#1C1410] dark:text-[#F5EFE8]"
                 style={{ fontFamily: "var(--font-cormorant)", fontWeight: 300, lineHeight: 0.95 }}
               >
                 {active === "hair" && <>Expert Hair<br /><span style={{ fontStyle: "italic", color: "#C9A84C" }}>Artistry</span></>}
@@ -232,7 +231,7 @@ export default function ServicesPage() {
                 {active === "bridal" && <>Bridal<br /><span style={{ fontStyle: "italic", color: "#C9A84C" }}>Excellence</span></>}
                 {active === "mens" && <>Premium<br /><span style={{ fontStyle: "italic", color: "#C9A84C" }}>Grooming</span></>}
               </h2>
-              <p className="fade-in-up delay-200 text-sm text-[#7A6A60] mt-6 leading-relaxed font-light max-w-sm italic"
+              <p className="fade-in-up delay-200 text-sm text-[#7A6A60] dark:text-[#9A8A80] mt-6 leading-relaxed font-light max-w-sm italic"
                 style={{ fontFamily: "var(--font-cormorant)", fontSize: "1.1rem" }}>
                 &ldquo;{current.tagline}&rdquo;
               </p>
@@ -241,9 +240,9 @@ export default function ServicesPage() {
             {/* Featured image — tall portrait */}
             <div className="fade-in-up delay-100 relative overflow-hidden" style={{ aspectRatio: "3/4", maxHeight: "480px" }}>
               {imgError ? (
-                <div className="absolute inset-0 bg-[#EDE8E3] flex flex-col items-center justify-center gap-3">
+                <div className="absolute inset-0 bg-[#EDE8E3] dark:bg-[#1A1020] flex flex-col items-center justify-center gap-3">
                   <span className="text-4xl text-[#C9A84C]/40">✦</span>
-                  <p className="text-xs text-[#7A6A60] uppercase tracking-[0.2em]">{categories.find(c => c.id === active)?.label}</p>
+                  <p className="text-xs text-[#7A6A60] dark:text-[#9A8A80] uppercase tracking-[0.2em]">{categories.find(c => c.id === active)?.label}</p>
                 </div>
               ) : (
                 <Image
@@ -264,11 +263,11 @@ export default function ServicesPage() {
           <div className="h-px bg-gradient-to-r from-transparent via-[#C9A84C]/40 to-transparent mb-16" />
 
           {/* Service cards — flush gap-px grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-[#DDD0C8]/70">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-[#DDD0C8]/70 dark:bg-[#2E2030]/60">
             {current.items.map((service, i) => (
               <div
                 key={i}
-                className="fade-in-up group flex flex-col p-8 bg-[#FAF6F1] hover:bg-white transition-all duration-300 relative border-l-2 border-transparent hover:border-[#C9A84C] hover:shadow-[4px_0_0_0_#C9A84C]"
+                className="fade-in-up group flex flex-col p-8 bg-[#FAF6F1] dark:bg-[#0F0A0F] hover:bg-white dark:hover:bg-[#170F17] transition-all duration-300 relative border-l-2 border-transparent hover:border-[#C9A84C] hover:shadow-[4px_0_0_0_#C9A84C]"
                 style={{ transitionDelay: `${i * 80}ms` }}
               >
                 {/* Icon */}
@@ -282,21 +281,21 @@ export default function ServicesPage() {
 
                 {/* Name */}
                 <h3
-                  className="text-2xl text-[#1C1410] mb-3"
+                  className="text-2xl text-[#1C1410] dark:text-[#F5EFE8] mb-3"
                   style={{ fontFamily: "var(--font-cormorant)", fontWeight: 400 }}
                 >
                   {service.name}
                 </h3>
 
                 {/* Description */}
-                <p className="text-sm text-[#7A6A60] leading-relaxed font-light flex-1">
+                <p className="text-sm text-[#7A6A60] dark:text-[#9A8A80] leading-relaxed font-light flex-1">
                   {service.desc}
                 </p>
 
                 {/* CTA */}
                 <Link
                   href="/consultation"
-                  className="mt-7 inline-flex items-center gap-2 text-xs font-semibold tracking-[0.1em] uppercase text-[#5B2D5E] border-b border-[#C9A84C]/50 pb-0.5 hover:gap-3 hover:border-[#C9A84C] transition-all duration-200 self-start"
+                  className="mt-7 inline-flex items-center gap-2 text-xs font-semibold tracking-[0.1em] uppercase text-[#5B2D5E] dark:text-[#D4A5C9] border-b border-[#C9A84C]/50 pb-0.5 hover:gap-3 hover:border-[#C9A84C] transition-all duration-200 self-start"
                 >
                   Book This Service <ArrowRight size={11} />
                 </Link>
@@ -356,10 +355,7 @@ export default function ServicesPage() {
       </section>
 
       {/* ── CTA BANNER ───────────────────────────────────── */}
-      <section
-        className="relative py-24 lg:py-32 overflow-hidden"
-        style={{ background: "linear-gradient(135deg, #FAF6F1 0%, #EDE8E3 100%)" }}
-      >
+      <section className="relative py-24 lg:py-32 overflow-hidden bg-[#FAF6F1] dark:bg-[#0F0A0F]">
         {/* Gold leaf pattern */}
         <div className="absolute inset-0 opacity-[0.04] pointer-events-none">
           <svg width="100%" height="100%">
@@ -375,14 +371,14 @@ export default function ServicesPage() {
         <div className="relative max-w-3xl mx-auto px-6 text-center">
           <p className="fade-in-up text-[11px] font-semibold tracking-[0.35em] uppercase text-[#C9A84C] mb-6">Ready to Begin?</p>
           <h2
-            className="fade-in-up delay-100 text-5xl lg:text-6xl xl:text-7xl text-[#1C1410] mb-6"
+            className="fade-in-up delay-100 text-5xl lg:text-6xl xl:text-7xl text-[#1C1410] dark:text-[#F5EFE8] mb-6"
             style={{ fontFamily: "var(--font-cormorant)", fontWeight: 300, lineHeight: 0.95 }}
           >
             Not sure where
             <br />
             <span style={{ fontStyle: "italic", color: "#5B2D5E" }}>to start?</span>
           </h2>
-          <p className="fade-in-up delay-200 text-sm text-[#7A6A60] mb-10 leading-relaxed font-light max-w-md mx-auto">
+          <p className="fade-in-up delay-200 text-sm text-[#7A6A60] dark:text-[#9A8A80] mb-10 leading-relaxed font-light max-w-md mx-auto">
             Book a free consultation and let Priya or Rohan guide you to the perfect treatment for your needs.
           </p>
           <Link

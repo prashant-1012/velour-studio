@@ -241,7 +241,7 @@ export default function TeamPage() {
                 title="Creative Director & Senior Hair Artist"
                 years="10 years experience"
                 specialty="Balayage · Bridal Styling · Hair Coloring"
-                img="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=800&q=80"
+                img="https://plus.unsplash.com/premium_photo-1708271598114-5e6e8892a2ad?w=800&q=80"
                 alt="Priya Kapoor — Creative Director"
                 bio="Priya trained at the L'Oréal Professionnel Academy in Mumbai before co-founding Velour Studio. Her signature balayage technique has earned Velour its reputation as Pune's go-to salon for natural-looking colour. She leads all bridal bookings personally."
                 qualifications={[
@@ -258,7 +258,7 @@ export default function TeamPage() {
                 title="Grooming & Skin Specialist"
                 years="9 years experience"
                 specialty="Hydra Facial · Men's Grooming · Anti-Aging"
-                img="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=800&q=80"
+                img="https://plus.unsplash.com/premium_photo-1779194564446-ed5059f6cc3f?w=800&q=80"
                 alt="Rohan Kapoor — Grooming & Skin Specialist"
                 bio="Rohan holds a CIDESCO certification in aesthetics and trained in advanced skin therapies across clinics in Delhi and Bengaluru. He launched the men's grooming lounge in 2025 and leads all skin treatment consultations at Velour Studio."
                 qualifications={[
